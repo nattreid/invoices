@@ -1,0 +1,27 @@
+<?php
+
+return [
+	'printInvoice.title' => 'Rechnung',
+	'printInvoice.supplier' => 'Lieferant',
+	'printInvoice.ico' => 'IN',
+	'printInvoice.dic' => 'TIN',
+	'printInvoice.invoice' => 'Steuerbeleg (Rechnung) Nr.',
+	'printInvoice.variable' => 'Variables Symbol',
+	'printInvoice.constant' => 'Konstantes Symbol',
+	'printInvoice.receiver' => 'Empfänger',
+	'printInvoice.bankConnection' => 'Bankverbindung',
+	'printInvoice.bank' => 'Bank',
+	'printInvoice.accountNumber' => 'Kontonummer',
+	'printInvoice.dueDate' => 'Zahlungsfälligkeit',
+	'printInvoice.formOfPayment' => 'Zahlungsart',
+	'printInvoice.transfer' => 'Überweisung',
+	'printInvoice.dateIssue' => 'Ausstellungsdatum',
+	'printInvoice.taxDate' => 'Zeitpunkt der Leistung / Zahlungsbestätigung',
+	'printInvoice.item' => 'Position',
+	'printInvoice.price' => 'Preis',
+	'printInvoice.amount' => 'Anzahl',
+	'printInvoice.vat' => 'MwSt',
+	'printInvoice.priceTotal' => 'Gesamtpreis',
+	'printInvoice.phone' => 'Telefon',
+	'printInvoice.email' => 'Email',
+];

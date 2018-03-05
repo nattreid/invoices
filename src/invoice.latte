@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="cs"/>
+    <meta name="title" content=""/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="robots" content=""/>
+    <meta name="author" content=""/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <title></title>
+    <style type="text/css">
+        html, body {
+            font: 11px Arial;
+        }
+
+        table {
+            border-spacing: 1px;
+            border-collapse: separate;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .space {
+            height: 10px;
+            display: block;
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .subscriber {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .items tbody td {
+            padding: 10px;
+        }
+
+        .items .name {
+            width: 408px;
+        }
+
+        .items .price {
+            width: 60px;
+        }
+
+        .items .amount {
+            width: 65px;
+        }
+
+        .items .priceTotal {
+            width: 79px;
+        }
+    </style>
+</head>
+<body>
+<table class="border" style="width: 650px; height: 842px">
+    <tr>
+        <td class="border" rowspan="2">
+            <table style="width: 300px;">
+                <tr>
+                    <td><strong>{_'printInvoice.supplier'}:</strong></td>
+                    <td>{_'printInvoice.ico'}: <strong>{$invoice->supplier->ico}</strong></td>
+                    <td n:if="$invoice->supplier->dic">{_'printInvoice.dic'}: <strong>{$invoice->supplier->dic}</strong></td>
+                </tr>
+                <tr>
+                    <td class="space"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        {$invoice->supplier->name}<br/>
+                        {$invoice->supplier->street}<br/>
+                        {$invoice->supplier->zip} {$invoice->supplier->city}<br/>
+                        {$invoice->supplier->country}
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="border">
+            <table>
+                <tr>
+                    <td colspan="2" class="title">
+                        {_'printInvoice.invoice'}: {$invoice->id}
+                    </td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.variable'}:</td>
+                    <td><strong>{$invoice->id}</strong></td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.constant'}:</td>
+                    <td>0308</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="border" rowspan="3">
+            <table style="width: 316px;">
+                <tr>
+                    <td><strong>{_'printInvoice.receiver'}:</strong></td>
+                    <td>{_'printInvoice.ico'}: <strong>{$invoice->receiver->ico}</strong></td>
+                    <td n:if="$invoice->receiver->dic">{_'printInvoice.dic'}: <strong>{$invoice->receiver->dic}</strong></td>
+                </tr>
+                <tr>
+                    <td class="space"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="subscriber">
+                        {$invoice->receiver->name}<br/>
+                        {$invoice->receiver->street}<br/>
+                        {$invoice->receiver->zip} {$invoice->receiver->city}<br/>
+                        {$invoice->receiver->country}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="border" style="height:50px;">{$invoice->supplier->text}</td>
+    </tr>
+    <tr>
+        <td class="border" rowspan="2">
+            <table>
+                <tr>
+                    <td colspan="2"><strong>{_'printInvoice.bankConnection'}</strong></td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.bankConnection'}:</td>
+                    <td><strong>{_'printInvoice.bank'}</strong></td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.accountNumber'}:</td>
+                    <td><strong>{$invoice->supplier->bankAccount}</strong></td>
+                </tr>
+                <tr>
+                    <td>IBAN:</td>
+                    <td><strong>{$invoice->supplier->iban}</strong></td>
+                </tr>
+                <tr>
+                    <td>SWIFT / BIC:</td>
+                    <td><strong>{$invoice->supplier->swift}</strong></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="border">
+            <table style="width: 316px;">
+                <tr>
+                    <td><strong>{_'printInvoice.dueDate'}:</strong></td>
+                    <td class="right"><strong>{$invoice->dueDate|localeDate}</strong></td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.formOfPayment'}:</td>
+                    <td class="right">{_'printInvoice.transfer'}</td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.dateIssue'}:</td>
+                    <td class="right">{$invoice->dateIssue|localeDate}</td>
+                </tr>
+                <tr>
+                    <td>{_'printInvoice.taxDate'}:</td>
+                    <td class="right">{$invoice->taxDate|localeDate}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="border" colspan="2">
+            <table class="items">
+                <thead>
+                <tr>
+                    <th class="name">{_'printInvoice.item'}</th>
+                    <th class="right price">{_'printInvoice.price'}</th>
+                    <th class="right amount">{_'printInvoice.amount'}</th>
+                    <th n:if="$invoice->vat" class="right vat">{_'printInvoice.vat'}</th>
+                    <th class="right priceTotal">{_'printInvoice.priceTotal'}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $order->items as $item}
+                    <tr>
+                        <td class="name">{$item->name}</td>
+                        <td class="right price">{$item->price|currency}</td>
+                        <td class="right amount">{$item->amount}</td>
+                        <td n:if="$invoice->vat" class="right vat">{$item->vat}</td>
+                        <td class="right priceTotal">{$item->totalPrice|currency}</td>
+                    </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="border title right" colspan="2">
+            {_'printInvoice.priceTotal'}: {$invoice->price|currency}
+        </td>
+    </tr>
+    <tr>
+        <td class="border" colspan="2">
+            <span n:if="$invoice->supplier->phone">{_'printInvoice.phone'}: {$invoice->supplier->phone}</span>
+            <span n:if="$invoice->supplier->email">{_'printInvoiceemail'}: {$invoice->supplier->email}</span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

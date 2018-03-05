@@ -1,0 +1,27 @@
+<?php
+
+return [
+	'printInvoice.title' => 'Faktura',
+	'printInvoice.supplier' => 'Dodavatel',
+	'printInvoice.ico' => 'IČO',
+	'printInvoice.dic' => 'DIČ',
+	'printInvoice.invoice' => 'Daňový doklad (faktura) č.',
+	'printInvoice.variable' => 'Variabilní symbol',
+	'printInvoice.constant' => 'Konstantní symbol',
+	'printInvoice.receiver' => 'Odběratel',
+	'printInvoice.bankConnection' => 'Bankovní spojení',
+	'printInvoice.bank' => 'Banka',
+	'printInvoice.accountNumber' => 'Číslo účtu',
+	'printInvoice.dueDate' => 'Datum splatnosti',
+	'printInvoice.formOfPayment' => 'Forma úhrady',
+	'printInvoice.transfer' => 'převodem',
+	'printInvoice.dateIssue' => 'Datum vystavení',
+	'printInvoice.taxDate' => 'Datum uskutečnění zdanitelného plnění / přijetí úplaty',
+	'printInvoice.item' => 'Položka',
+	'printInvoice.price' => 'Cena',
+	'printInvoice.amount' => 'Počet',
+	'printInvoice.vat' => 'DPH',
+	'printInvoice.priceTotal' => 'Celková cena',
+	'printInvoice.phone' => 'Telefon',
+	'printInvoice.email' => 'Email',
+];

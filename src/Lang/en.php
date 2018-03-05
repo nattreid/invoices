@@ -1,0 +1,27 @@
+<?php
+
+return [
+	'printInvoice.title' => 'Invoice',
+	'printInvoice.supplier' => 'Supplier',
+	'printInvoice.ico' => 'Company ID',
+	'printInvoice.dic' => 'DIČ',
+	'printInvoice.invoice' => 'INVOICE no.',
+	'printInvoice.variable' => 'Variable symbol',
+	'printInvoice.constant' => 'Constant symbol',
+	'printInvoice.receiver' => 'Purchaser',
+	'printInvoice.bankConnection' => 'Bank Account',
+	'printInvoice.bank' => 'Bank',
+	'printInvoice.accountNumber' => 'Account Number',
+	'printInvoice.dueDate' => 'Due date',
+	'printInvoice.formOfPayment' => 'Method of payment',
+	'printInvoice.transfer' => 'bank transfer',
+	'printInvoice.dateIssue' => 'Issue date',
+	'printInvoice.taxDate' => 'Taxe date',
+	'printInvoice.item' => 'Item',
+	'printInvoice.price' => 'Price',
+	'printInvoice.amount' => 'Quantity',
+	'printInvoice.vat' => 'Vat',
+	'printInvoice.priceTotal' => 'Total price',
+	'printInvoice.phone' => 'Phone',
+	'printInvoice.email' => 'Email',
+];
