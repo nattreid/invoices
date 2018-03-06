@@ -15,4 +15,9 @@ class CZK implements ICurrency
 	{
 		return number_format($price, 2, ',', ' ') . ' Kč';
 	}
+
+	public function __toString(): string
+	{
+		return 'CZK';
+	}
 }

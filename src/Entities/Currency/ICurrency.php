@@ -12,4 +12,6 @@ namespace NAttreid\Invoices\Currency;
 interface ICurrency
 {
 	public function format(float $price): string;
+
+	public function __toString(): string;
 }

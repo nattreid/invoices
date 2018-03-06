@@ -15,4 +15,9 @@ class EUR implements ICurrency
 	{
 		return '€' . number_format($price, 2);
 	}
+
+	public function __toString(): string
+	{
+		return 'EUR';
+	}
 }

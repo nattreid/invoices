@@ -6,6 +6,8 @@ namespace NAttreid\Invoices;
 
 use DateTime;
 use DateTimeInterface;
+use NAttreid\Invoices\Currency\CZK;
+use NAttreid\Invoices\Currency\EUR;
 use NAttreid\Invoices\Currency\ICurrency;
 use Nette\SmartObject;
 
@@ -13,6 +15,8 @@ use Nette\SmartObject;
  * Class Invoice
  *
  * @property int $id
+ * @property int $constant
+ * @property int $variable
  * @property DateTimeInterface $dueDate
  * @property DateTimeInterface $dateIssue
  * @property DateTimeInterface $taxDate
@@ -32,6 +36,12 @@ class Invoice
 	/** @var int */
 	private $id;
 
+	/** @var int */
+	private $constant;
+
+	/** @var int */
+	private $variable;
+
 	/** @var DateTimeInterface */
 	private $dueDate;
 
@@ -43,7 +53,6 @@ class Invoice
 
 	/** @var ICurrency */
 	private $currency = '$';
-
 
 	/** @var Supplier */
 	private $supplier;
@@ -69,6 +78,26 @@ class Invoice
 	protected function setId(int $id): void
 	{
 		$this->id = $id;
+	}
+
+	protected function getConstant(): int
+	{
+		return $this->constant;
+	}
+
+	protected function setConstant(int $constant): void
+	{
+		$this->constant = $constant;
+	}
+
+	protected function getVariable(): int
+	{
+		return $this->variable;
+	}
+
+	protected function setVariable(int $variable): void
+	{
+		$this->variable = $variable;
 	}
 
 	protected function getDueDate(): DateTimeInterface
@@ -106,19 +135,23 @@ class Invoice
 		return $this->currency;
 	}
 
-	protected function setCurrency(ICurrency $currency): void
+	/**
+	 * @param ICurrency|string $currency
+	 */
+	protected function setCurrency($currency): void
 	{
-		$this->currency = $currency;
-	}
-
-	protected function isCurrencyBefore(): bool
-	{
-		return $this->currencyBefore;
-	}
-
-	protected function setCurrencyBefore(bool $currencyBefore): void
-	{
-		$this->currencyBefore = $currencyBefore;
+		if ($currency instanceof ICurrency) {
+			$this->currency = $currency;
+		} elseif (is_string($currency)) {
+			switch ($currency) {
+				case 'CZK':
+					$this->currency = new CZK;
+					break;
+				case 'EUR':
+					$this->currency = new EUR;
+					break;
+			}
+		}
 	}
 
 	protected function isVat(): bool
