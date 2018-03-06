@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoice;
+namespace NAttreid\Invoices;
 
 use DateTime;
 use DateTimeInterface;
-use NAttreid\Invoice\Currency\ICurrency;
+use NAttreid\Invoices\Currency\ICurrency;
 use Nette\SmartObject;
 
 /**

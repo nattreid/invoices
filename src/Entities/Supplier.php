@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoice;
+namespace NAttreid\Invoices;
 
 use Nette\SmartObject;
 

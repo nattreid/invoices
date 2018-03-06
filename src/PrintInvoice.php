@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoice;
+namespace NAttreid\Invoices;
 
 use Joseki\Application\Responses\PdfResponse;
-use NAttreid\Invoice\Lang\Translator;
+use NAttreid\Invoices\Lang\Translator;
 use Nette\Application\UI\ITemplateFactory;
 use Nette\Bridges\ApplicationLatte\Template;
 use Nette\InvalidArgumentException;

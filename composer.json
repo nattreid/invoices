@@ -1,6 +1,6 @@
 {
-  "name": "nattreid/invoice",
-  "description": "Invoice for Nette Framework",
+  "name": "nattreid/invoices",
+  "description": "Invoices for Nette Framework",
   "type": "library",
   "license": [
     "MIT"
