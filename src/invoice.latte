@@ -75,9 +75,9 @@
         <td class="border" rowspan="2">
             <table style="width: 300px;">
                 <tr>
-                    <td><strong>{_'printInvoice.supplier'}:</strong></td>
-                    <td>{_'printInvoice.ico'}: <strong>{$invoice->supplier->ico}</strong></td>
-                    <td n:if="$invoice->supplier->dic">{_'printInvoice.dic'}: <strong>{$invoice->supplier->dic}</strong></td>
+                    <td><strong>{_'nattreid.printInvoice.supplier'}:</strong></td>
+                    <td>{_'nattreid.printInvoice.ico'}: <strong>{$invoice->supplier->ico}</strong></td>
+                    <td n:if="$invoice->supplier->dic">{_'nattreid.printInvoice.dic'}: <strong>{$invoice->supplier->dic}</strong></td>
                 </tr>
                 <tr>
                     <td class="space"></td>
@@ -96,15 +96,15 @@
             <table>
                 <tr>
                     <td colspan="2" class="title">
-                        {_'printInvoice.invoice'}: {$invoice->id}
+                        {_'nattreid.printInvoice.invoice'}: {$invoice->id}
                     </td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.variable'}:</td>
+                    <td>{_'nattreid.printInvoice.variable'}:</td>
                     <td><strong>{$invoice->id}</strong></td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.constant'}:</td>
+                    <td>{_'nattreid.printInvoice.constant'}:</td>
                     <td>0308</td>
                 </tr>
             </table>
@@ -114,9 +114,9 @@
         <td class="border" rowspan="3">
             <table style="width: 316px;">
                 <tr>
-                    <td><strong>{_'printInvoice.receiver'}:</strong></td>
-                    <td>{_'printInvoice.ico'}: <strong>{$invoice->receiver->ico}</strong></td>
-                    <td n:if="$invoice->receiver->dic">{_'printInvoice.dic'}: <strong>{$invoice->receiver->dic}</strong></td>
+                    <td><strong>{_'nattreid.printInvoice.receiver'}:</strong></td>
+                    <td>{_'nattreid.printInvoice.ico'}: <strong>{$invoice->receiver->ico}</strong></td>
+                    <td n:if="$invoice->receiver->dic">{_'nattreid.printInvoice.dic'}: <strong>{$invoice->receiver->dic}</strong></td>
                 </tr>
                 <tr>
                     <td class="space"></td>
@@ -139,14 +139,14 @@
         <td class="border" rowspan="2">
             <table>
                 <tr>
-                    <td colspan="2"><strong>{_'printInvoice.bankConnection'}</strong></td>
+                    <td colspan="2"><strong>{_'nattreid.printInvoice.bankConnection'}</strong></td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.bankConnection'}:</td>
-                    <td><strong>{_'printInvoice.bank'}</strong></td>
+                    <td>{_'nattreid.printInvoice.bankConnection'}:</td>
+                    <td><strong>{_'nattreid.printInvoice.bank'}</strong></td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.accountNumber'}:</td>
+                    <td>{_'nattreid.printInvoice.accountNumber'}:</td>
                     <td><strong>{$invoice->supplier->bankAccount}</strong></td>
                 </tr>
                 <tr>
@@ -164,19 +164,19 @@
         <td class="border">
             <table style="width: 316px;">
                 <tr>
-                    <td><strong>{_'printInvoice.dueDate'}:</strong></td>
+                    <td><strong>{_'nattreid.printInvoice.dueDate'}:</strong></td>
                     <td class="right"><strong>{$invoice->dueDate|localeDate}</strong></td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.formOfPayment'}:</td>
-                    <td class="right">{_'printInvoice.transfer'}</td>
+                    <td>{_'nattreid.printInvoice.formOfPayment'}:</td>
+                    <td class="right">{_'nattreid.printInvoice.transfer'}</td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.dateIssue'}:</td>
+                    <td>{_'nattreid.printInvoice.dateIssue'}:</td>
                     <td class="right">{$invoice->dateIssue|localeDate}</td>
                 </tr>
                 <tr>
-                    <td>{_'printInvoice.taxDate'}:</td>
+                    <td>{_'nattreid.printInvoice.taxDate'}:</td>
                     <td class="right">{$invoice->taxDate|localeDate}</td>
                 </tr>
             </table>
@@ -187,11 +187,11 @@
             <table class="items">
                 <thead>
                 <tr>
-                    <th class="name">{_'printInvoice.item'}</th>
-                    <th class="right price">{_'printInvoice.price'}</th>
-                    <th class="right amount">{_'printInvoice.amount'}</th>
-                    <th n:if="$invoice->vat" class="right vat">{_'printInvoice.vat'}</th>
-                    <th class="right priceTotal">{_'printInvoice.priceTotal'}</th>
+                    <th class="name">{_'nattreid.printInvoice.item'}</th>
+                    <th class="right price">{_'nattreid.printInvoice.price'}</th>
+                    <th class="right amount">{_'nattreid.printInvoice.amount'}</th>
+                    <th n:if="$invoice->vat" class="right vat">{_'nattreid.printInvoice.vat'}</th>
+                    <th class="right priceTotal">{_'nattreid.printInvoice.priceTotal'}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -210,12 +210,12 @@
     </tr>
     <tr>
         <td class="border title right" colspan="2">
-            {_'printInvoice.priceTotal'}: {$invoice->price|currency}
+            {_'nattreid.printInvoice.priceTotal'}: {$invoice->price|currency}
         </td>
     </tr>
     <tr>
         <td class="border" colspan="2">
-            <span n:if="$invoice->supplier->phone">{_'printInvoice.phone'}: {$invoice->supplier->phone}</span>
+            <span n:if="$invoice->supplier->phone">{_'nattreid.printInvoice.phone'}: {$invoice->supplier->phone}</span>
             <span n:if="$invoice->supplier->email">{_'printInvoiceemail'}: {$invoice->supplier->email}</span>
         </td>
     </tr>

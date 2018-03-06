@@ -66,7 +66,7 @@ class PrintInvoice
 		$pdf = new PdfResponse($template);
 		$pdf->pageOrientation = PDFResponse::ORIENTATION_PORTRAIT;
 		$pdf->pageFormat = 'A4';
-		$pdf->documentTitle = $this->translator->translate('printInvoice.title') . '-' . $this->invoice->id;
+		$pdf->documentTitle = $this->translator->translate('nattreid.printInvoice.title') . '-' . $this->invoice->id;
 		$pdf->documentAuthor = '';
 
 		return $pdf;
