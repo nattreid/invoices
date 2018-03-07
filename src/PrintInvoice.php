@@ -62,6 +62,7 @@ class PrintInvoice
 		/* @var $template Template */
 		$template = $this->templateFactory->createTemplate();
 		$template->setFile(__DIR__ . "/invoice.latte");
+		$template->setTranslator($this->translator);
 
 		if ($this->invoice === null) {
 			throw new InvalidArgumentException;

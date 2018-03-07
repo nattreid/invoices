@@ -14,7 +14,7 @@ use Nette\SmartObject;
  * @property int $amount
  * @property int $vat
  * @property-read float $totalPrice
- * @property-read float $withoutVat
+ * @property-read float $priceWithoutVat
  *
  * @author Attreid <attreid@gmail.com>
  */
@@ -79,7 +79,7 @@ class Item
 		return $this->price * $this->amount;
 	}
 
-	protected function getWithoutVat(): float
+	protected function getPriceWithoutVat(): float
 	{
 		$price = $this->price;
 		$vat = $price * $this->vat / 100;

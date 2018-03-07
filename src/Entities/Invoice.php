@@ -6,9 +6,9 @@ namespace NAttreid\Invoices\Entities;
 
 use DateTime;
 use DateTimeInterface;
-use NAttreid\Invoices\Currency\CZK;
-use NAttreid\Invoices\Currency\EUR;
-use NAttreid\Invoices\Currency\ICurrency;
+use NAttreid\Invoices\Entities\Currency\CZK;
+use NAttreid\Invoices\Entities\Currency\EUR;
+use NAttreid\Invoices\Entities\Currency\ICurrency;
 use Nette\SmartObject;
 
 /**
