@@ -21,6 +21,7 @@ return [
 	'nattreid.printInvoice.price' => 'Cena',
 	'nattreid.printInvoice.amount' => 'Počet',
 	'nattreid.printInvoice.vat' => 'DPH',
+	'nattreid.printInvoice.priceWithoutVat' => 'Cena bez DPH',
 	'nattreid.printInvoice.priceTotal' => 'Celková cena',
 	'nattreid.printInvoice.phone' => 'Telefón',
 	'nattreid.printInvoice.email' => 'Email',

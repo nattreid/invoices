@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoices;
+namespace NAttreid\Invoices\Entities;
 
 use Nette\SmartObject;
 
@@ -14,6 +14,7 @@ use Nette\SmartObject;
  * @property int $amount
  * @property int $vat
  * @property-read float $totalPrice
+ * @property-read float $withoutVat
  *
  * @author Attreid <attreid@gmail.com>
  */
@@ -75,8 +76,13 @@ class Item
 
 	protected function getTotalPrice(): float
 	{
-		$price = $this->price * $this->amount;
+		return $this->price * $this->amount;
+	}
+
+	protected function getWithoutVat(): float
+	{
+		$price = $this->price;
 		$vat = $price * $this->vat / 100;
-		return $price + $vat;
+		return $price - $vat;
 	}
 }

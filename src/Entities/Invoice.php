@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoices;
+namespace NAttreid\Invoices\Entities;
 
 use DateTime;
 use DateTimeInterface;
@@ -52,7 +52,7 @@ class Invoice
 	private $taxDate;
 
 	/** @var ICurrency */
-	private $currency = '$';
+	private $currency;
 
 	/** @var Supplier */
 	private $supplier;
@@ -68,6 +68,7 @@ class Invoice
 		$this->dueDate = new DateTime;
 		$this->dateIssue = new DateTime;
 		$this->taxDate = new DateTime;
+		$this->currency = new EUR;
 	}
 
 	protected function getId(): int

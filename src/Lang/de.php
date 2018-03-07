@@ -21,6 +21,7 @@ return [
 	'nattreid.printInvoice.price' => 'Preis',
 	'nattreid.printInvoice.amount' => 'Anzahl',
 	'nattreid.printInvoice.vat' => 'MwSt',
+	'nattreid.printInvoice.priceWithoutVat' => 'Preis ohne MwSt',
 	'nattreid.printInvoice.priceTotal' => 'Gesamtpreis',
 	'nattreid.printInvoice.phone' => 'Telefon',
 	'nattreid.printInvoice.email' => 'Email',

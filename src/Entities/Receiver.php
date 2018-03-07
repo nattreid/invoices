@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoices;
+namespace NAttreid\Invoices\Entities;
 
 use Nette\SmartObject;
 
@@ -15,6 +15,7 @@ use Nette\SmartObject;
  * @property string|null $street
  * @property string|null $zip
  * @property string|null $city
+ * @property string|null $country
  *
  * @author Attreid <attreid@gmail.com>
  */
@@ -39,6 +40,9 @@ class Receiver
 
 	/** @var string|null */
 	private $city;
+
+	/** @var string|null */
+	private $country;
 
 	protected function getIco(): ?string
 	{
@@ -98,5 +102,15 @@ class Receiver
 	protected function setCity(string $city): void
 	{
 		$this->city = $city;
+	}
+
+	protected function getCountry(): ?string
+	{
+		return $this->country;
+	}
+
+	protected function setCountry(string $country): void
+	{
+		$this->country = $country;
 	}
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\Invoices\Currency;
+namespace NAttreid\Invoices\Entities\Currency;
 
 /**
  * Class CZK

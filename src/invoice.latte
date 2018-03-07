@@ -190,16 +190,18 @@
                     <th class="name">{_'nattreid.printInvoice.item'}</th>
                     <th class="right price">{_'nattreid.printInvoice.price'}</th>
                     <th class="right amount">{_'nattreid.printInvoice.amount'}</th>
+                    <th n:if="$invoice->vat" class="right priceWithoutVat">{_'nattreid.printInvoice.priceWithoutVat'}</th>
                     <th n:if="$invoice->vat" class="right vat">{_'nattreid.printInvoice.vat'}</th>
                     <th class="right priceTotal">{_'nattreid.printInvoice.priceTotal'}</th>
                 </tr>
                 </thead>
                 <tbody>
-                {foreach $order->items as $item}
+                {foreach $invoice->items as $item}
                     <tr>
                         <td class="name">{$item->name}</td>
                         <td class="right price">{$item->price|currency}</td>
                         <td class="right amount">{$item->amount}</td>
+                        <td n:if="$invoice->vat" class="right priceWithoutVat">{$item->priceWithoutVat}</td>
                         <td n:if="$invoice->vat" class="right vat">{$item->vat}</td>
                         <td class="right priceTotal">{$item->totalPrice|currency}</td>
                     </tr>
