@@ -53,6 +53,10 @@
             vertical-align: top;
         }
 
+        .text td {
+            padding: 5px 5px 10px;
+        }
+
         .items {
             height: 500px;
         }
@@ -203,6 +207,13 @@
     </tr>
     <tr>
         <td class="border whiteSpace" colspan="2">
+            <table class="text" n:if="$invoice->text">
+                <tr>
+                    <td>
+                        {$invoice->text}
+                    </td>
+                </tr>
+            </table>
             <table class="items">
                 <thead>
                 <tr>

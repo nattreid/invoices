@@ -42,6 +42,7 @@ function createComponentList(){
     $invoice->dateIssue = $obj->dateIssue;
     $invoice->taxDate = $obj->taxDate;
     $invoice->vat = $obj->vat;
+    $invoice->text = $obj->text;
 	$invoice->currency = new \NAttreid\Invoices\Entities\Currency\EUR();
     
     $invoice->receiver = $receiver;

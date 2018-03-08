@@ -22,6 +22,7 @@ use Nette\SmartObject;
  * @property DateTimeInterface $taxDate
  * @property ICurrency $currency
  * @property bool $vat
+ * @property string|null $text
  * @property Supplier $supplier
  * @property Receiver $receiver
  * @property Item[] $items
@@ -53,6 +54,12 @@ class Invoice
 
 	/** @var ICurrency */
 	private $currency;
+
+	/** @var bool */
+	private $vat;
+
+	/** @var string */
+	private $text;
 
 	/** @var Supplier */
 	private $supplier;
@@ -163,6 +170,16 @@ class Invoice
 	protected function setVat(bool $vat): void
 	{
 		$this->vat = $vat;
+	}
+
+	protected function getText(): ?string
+	{
+		return $this->text;
+	}
+
+	protected function setText(?string $text): void
+	{
+		$this->text = $text;
 	}
 
 	protected function getSupplier(): Supplier
