@@ -14,6 +14,7 @@ use Nette\SmartObject;
 /**
  * Class Invoice
  *
+ * @property string|null $title
  * @property int $id
  * @property int $constant
  * @property int $variable
@@ -33,6 +34,9 @@ use Nette\SmartObject;
 class Invoice
 {
 	use SmartObject;
+
+	/** @var string|null */
+	private $title;
 
 	/** @var int */
 	private $id;
@@ -76,6 +80,16 @@ class Invoice
 		$this->dateIssue = new DateTime;
 		$this->taxDate = new DateTime;
 		$this->currency = new EUR;
+	}
+
+	protected function getTitle(): ?string
+	{
+		return $this->title;
+	}
+
+	protected function setTitle(?string $title): void
+	{
+		$this->title = $title;
 	}
 
 	protected function getId(): int

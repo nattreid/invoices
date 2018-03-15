@@ -49,7 +49,11 @@
         }
 
         .whiteSpace {
-            height: 700px;
+            {if $invoice->title}
+                height: 696px;
+            {else}
+                height: 705px;
+            {/if}
             vertical-align: top;
         }
 
@@ -112,8 +116,13 @@
         </td>
         <td class="border">
             <table style="width: 100%">
-                <tr>
+                <tr n:if="$invoice->title">
                     <td colspan="2" class="title">
+                        {$invoice->title}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="title" {if $invoice->title}style="font-size: 1.1em"{/if}>
                         {_'nattreid.printInvoice.invoice'}: {$invoice->id}
                     </td>
                 </tr>
@@ -133,7 +142,8 @@
             <table style="width: 100%">
                 <tr>
                     <td><strong>{_'nattreid.printInvoice.receiver'}:</strong></td>
-                    <td>{_'nattreid.printInvoice.ico'}: <strong>{$invoice->receiver->ico}</strong></td>
+                    <td n:if="$invoice->receiver->ico">{_'nattreid.printInvoice.ico'}:
+                        <strong>{$invoice->receiver->ico}</strong></td>
                     <td n:if="$invoice->receiver->dic">{_'nattreid.printInvoice.dic'}:
                         <strong>{$invoice->receiver->dic}</strong></td>
                 </tr>
