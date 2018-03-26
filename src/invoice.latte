@@ -49,12 +49,9 @@
         }
 
         .whiteSpace {
-            {if $invoice->title}
-                height: 696px;
-            {else}
-                height: 705px;
-            {/if}
-            vertical-align: top;
+        {if $invoice->title} height: 696px;
+        {else} height: 705px;
+        {/if} vertical-align: top;
         }
 
         .text td {
@@ -198,7 +195,7 @@
                 </tr>
                 <tr>
                     <td>{_'nattreid.printInvoice.formOfPayment'}:</td>
-                    <td class="right">{_'nattreid.printInvoice.transfer'}</td>
+                    <td class="right">{_'nattreid.printInvoice.' . $invoice->payment}</td>
                 </tr>
                 <tr>
                     <td>{_'nattreid.printInvoice.dateIssue'}:</td>

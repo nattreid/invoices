@@ -15,6 +15,7 @@ return [
 	'nattreid.printInvoice.dueDate' => 'Datum splatnosti',
 	'nattreid.printInvoice.formOfPayment' => 'Forma úhrady',
 	'nattreid.printInvoice.transfer' => 'převodem',
+	'nattreid.printInvoice.cash' => 'hotově',
 	'nattreid.printInvoice.dateIssue' => 'Datum vystavení',
 	'nattreid.printInvoice.taxDate' => 'Datum uskutečnění zdanitelného plnění / přijetí úplaty',
 	'nattreid.printInvoice.item' => 'Položka',

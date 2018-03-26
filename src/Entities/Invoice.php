@@ -9,6 +9,9 @@ use DateTimeInterface;
 use NAttreid\Invoices\Entities\Currency\CZK;
 use NAttreid\Invoices\Entities\Currency\EUR;
 use NAttreid\Invoices\Entities\Currency\ICurrency;
+use NAttreid\Invoices\Entities\Payment\Cash;
+use NAttreid\Invoices\Entities\Payment\IPayment;
+use NAttreid\Invoices\Entities\Payment\Transfer;
 use Nette\SmartObject;
 
 /**
@@ -71,6 +74,9 @@ class Invoice
 	/** @var Receiver */
 	private $receiver;
 
+	/** @var IPayment */
+	private $payment;
+
 	/** @var Item[] */
 	private $items = [];
 
@@ -80,6 +86,7 @@ class Invoice
 		$this->dateIssue = new DateTime;
 		$this->taxDate = new DateTime;
 		$this->currency = new EUR;
+		$this->payment = new Transfer;
 	}
 
 	protected function getTitle(): ?string
@@ -171,6 +178,30 @@ class Invoice
 					break;
 				case 'EUR':
 					$this->currency = new EUR;
+					break;
+			}
+		}
+	}
+
+	protected function getPayment(): IPayment
+	{
+		return $this->payment;
+	}
+
+	/**
+	 * @param IPayment|string $payment
+	 */
+	protected function setPayment($payment): void
+	{
+		if ($payment instanceof IPayment) {
+			$this->payment = $payment;
+		} elseif (is_string($payment)) {
+			switch ($payment) {
+				case 'transfer':
+					$this->currency = new Transfer;
+					break;
+				case 'cash':
+					$this->currency = new Cash;
 					break;
 			}
 		}

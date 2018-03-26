@@ -15,6 +15,7 @@ return [
 	'nattreid.printInvoice.dueDate' => 'Due date',
 	'nattreid.printInvoice.formOfPayment' => 'Method of payment',
 	'nattreid.printInvoice.transfer' => 'bank transfer',
+	'nattreid.printInvoice.cash' => 'cash',
 	'nattreid.printInvoice.dateIssue' => 'Issue date',
 	'nattreid.printInvoice.taxDate' => 'Taxe date',
 	'nattreid.printInvoice.item' => 'Item',

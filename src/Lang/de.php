@@ -15,6 +15,7 @@ return [
 	'nattreid.printInvoice.dueDate' => 'Zahlungsfälligkeit',
 	'nattreid.printInvoice.formOfPayment' => 'Zahlungsart',
 	'nattreid.printInvoice.transfer' => 'Überweisung',
+	'nattreid.printInvoice.cash' => 'in bar',
 	'nattreid.printInvoice.dateIssue' => 'Ausstellungsdatum',
 	'nattreid.printInvoice.taxDate' => 'Zeitpunkt der Leistung / Zahlungsbestätigung',
 	'nattreid.printInvoice.item' => 'Position',

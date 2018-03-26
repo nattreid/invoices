@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace NAttreid\Invoices\Entities\Currency;
 
 /**
- * Class Currency
+ * Interface Currency
  *
  * @author Attreid <attreid@gmail.com>
  */
