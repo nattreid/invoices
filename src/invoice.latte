@@ -251,6 +251,7 @@
     </tr>
     <tr>
         <td class="border" colspan="2">
+            <span n:if="$invoice->accountant">{$invoice->accountant}</span>
             <span n:if="$invoice->supplier->phone">{_'nattreid.printInvoice.phone'}: {$invoice->supplier->phone}</span>
             <span n:if="$invoice->supplier->email">{_'nattreid.printInvoice.email'}: {$invoice->supplier->email}</span>
         </td>

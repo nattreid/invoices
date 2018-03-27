@@ -25,12 +25,14 @@ use Nette\SmartObject;
  * @property DateTimeInterface $dateIssue
  * @property DateTimeInterface $taxDate
  * @property ICurrency $currency
+ * @property IPayment $payment
  * @property bool $vat
  * @property string|null $text
  * @property Supplier $supplier
  * @property Receiver $receiver
  * @property Item[] $items
- * @property float $price
+ * @property-read float $price
+ * @property string|null $accountant
  *
  * @author Attreid <attreid@gmail.com>
  */
@@ -79,6 +81,9 @@ class Invoice
 
 	/** @var Item[] */
 	private $items = [];
+
+	/** @var string */
+	private $accountant;
 
 	public function __construct()
 	{
@@ -198,10 +203,10 @@ class Invoice
 		} elseif (is_string($payment)) {
 			switch ($payment) {
 				case 'transfer':
-					$this->currency = new Transfer;
+					$this->payment = new Transfer;
 					break;
 				case 'cash':
-					$this->currency = new Cash;
+					$this->payment = new Cash;
 					break;
 			}
 		}
@@ -265,4 +270,16 @@ class Invoice
 		}
 		return $price;
 	}
+
+	protected function getAccountant(): ?string
+	{
+		return $this->accountant;
+	}
+
+	protected function setAccountant(?string $accountant): void
+	{
+		$this->accountant = $accountant;
+	}
+
+
 }
