@@ -49,7 +49,7 @@ class Receiver
 		return $this->ico;
 	}
 
-	protected function setIco(string $ico): void
+	protected function setIco(?string $ico): void
 	{
 		$this->ico = $ico;
 	}
@@ -59,7 +59,7 @@ class Receiver
 		return $this->dic;
 	}
 
-	protected function setDic(string $dic): void
+	protected function setDic(?string $dic): void
 	{
 		$this->dic = $dic;
 	}
@@ -69,7 +69,7 @@ class Receiver
 		return $this->name;
 	}
 
-	protected function setName(string $name): void
+	protected function setName(?string $name): void
 	{
 		$this->name = $name;
 	}
@@ -79,7 +79,7 @@ class Receiver
 		return $this->street;
 	}
 
-	protected function setStreet(string $street): void
+	protected function setStreet(?string $street): void
 	{
 		$this->street = $street;
 	}
@@ -89,7 +89,7 @@ class Receiver
 		return $this->zip;
 	}
 
-	protected function setZip(string $zip): void
+	protected function setZip(?string $zip): void
 	{
 		$this->zip = $zip;
 	}
@@ -99,7 +99,7 @@ class Receiver
 		return $this->city;
 	}
 
-	protected function setCity(string $city): void
+	protected function setCity(?string $city): void
 	{
 		$this->city = $city;
 	}
@@ -109,7 +109,7 @@ class Receiver
 		return $this->country;
 	}
 
-	protected function setCountry(string $country): void
+	protected function setCountry(?string $country): void
 	{
 		$this->country = $country;
 	}

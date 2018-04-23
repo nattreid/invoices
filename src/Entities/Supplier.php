@@ -75,7 +75,7 @@ class Supplier
 		return $this->ico;
 	}
 
-	protected function setIco(string $ico): void
+	protected function setIco(?string $ico): void
 	{
 		$this->ico = $ico;
 	}
@@ -85,7 +85,7 @@ class Supplier
 		return $this->dic;
 	}
 
-	protected function setDic(string $dic): void
+	protected function setDic(?string $dic): void
 	{
 		$this->dic = $dic;
 	}
@@ -95,7 +95,7 @@ class Supplier
 		return $this->name;
 	}
 
-	protected function setName(string $name): void
+	protected function setName(?string $name): void
 	{
 		$this->name = $name;
 	}
@@ -105,7 +105,7 @@ class Supplier
 		return $this->street;
 	}
 
-	protected function setStreet(string $street): void
+	protected function setStreet(?string $street): void
 	{
 		$this->street = $street;
 	}
@@ -115,7 +115,7 @@ class Supplier
 		return $this->zip;
 	}
 
-	protected function setZip(string $zip): void
+	protected function setZip(?string $zip): void
 	{
 		$this->zip = $zip;
 	}
@@ -125,7 +125,7 @@ class Supplier
 		return $this->city;
 	}
 
-	protected function setCity(string $city): void
+	protected function setCity(?string $city): void
 	{
 		$this->city = $city;
 	}
@@ -135,7 +135,7 @@ class Supplier
 		return $this->country;
 	}
 
-	protected function setCountry(string $country): void
+	protected function setCountry(?string $country): void
 	{
 		$this->country = $country;
 	}
@@ -145,7 +145,7 @@ class Supplier
 		return $this->text;
 	}
 
-	protected function setText(string $text): void
+	protected function setText(?string $text): void
 	{
 		$this->text = $text;
 	}
@@ -155,7 +155,7 @@ class Supplier
 		return $this->bankAccount;
 	}
 
-	protected function setBankAccount(string $bankAccount): void
+	protected function setBankAccount(?string $bankAccount): void
 	{
 		$this->bankAccount = $bankAccount;
 	}
@@ -165,7 +165,7 @@ class Supplier
 		return $this->iban;
 	}
 
-	protected function setIban(string $iban): void
+	protected function setIban(?string $iban): void
 	{
 		$this->iban = $iban;
 	}
@@ -175,7 +175,7 @@ class Supplier
 		return $this->swift;
 	}
 
-	protected function setSwift(string $swift): void
+	protected function setSwift(?string $swift): void
 	{
 		$this->swift = $swift;
 	}
@@ -185,7 +185,7 @@ class Supplier
 		return $this->phone;
 	}
 
-	protected function setPhone(string $phone): void
+	protected function setPhone(?string $phone): void
 	{
 		$this->phone = $phone;
 	}
@@ -195,7 +195,7 @@ class Supplier
 		return $this->email;
 	}
 
-	protected function setEmail(string $email): void
+	protected function setEmail(?string $email): void
 	{
 		$this->email = $email;
 	}
