@@ -82,7 +82,6 @@ class Item
 	protected function getPriceWithoutVat(): float
 	{
 		$price = $this->price;
-		$vat = $price * $this->vat / 100;
-		return $price - $vat;
+		return (100 / ($this->vat + 100)) * $price;
 	}
 }
